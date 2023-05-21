@@ -1,0 +1,19 @@
+{
+  "extends": "@grafana/toolkit/src/config/tsconfig.plugin.json",
+  "include": [
+    "src",
+    "types"
+  ],
+  "compilerOptions": {
+    "noImplicitAny": false,
+    "noImplicitThis": false,
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "typeRoots": [
+      "./node_modules/@types"
+    ],
+    "paths": {
+      "moment": ["node_modules/moment/moment.js"]
+    }
+  }
+}

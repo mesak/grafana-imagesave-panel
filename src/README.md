@@ -1,0 +1,3 @@
+# Image Save Panel Plugin for Grafana
+
+This plugin is a panel plugin for Grafana that allows you to save image to grafana.
