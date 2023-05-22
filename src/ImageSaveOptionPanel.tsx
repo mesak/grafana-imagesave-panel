@@ -1,12 +1,5 @@
 import React, { FormEvent } from 'react';
-import {
-  InlineFieldRow,
-  InlineField,
-  InlineSwitch,
-  FileUpload,
-  VerticalGroup,
-  stylesFactory,
-} from '@grafana/ui';
+import { InlineFieldRow, FileUpload, VerticalGroup, stylesFactory } from '@grafana/ui';
 import { StandardEditorProps } from '@grafana/data';
 import { css } from 'emotion';
 import { ImageData } from './ImageSaveOption';
@@ -16,19 +9,9 @@ export const ImageSaveOptionPanel: React.FC<StandardEditorProps<boolean>> = ({
   onChange,
 }: StandardEditorProps) => {
   const customOptions: any = context.options[item.id] || {};
-  console.log('context', context.options);
-  console.log('customOptions', customOptions);
-  const onInputChange = (e: FormEvent<HTMLInputElement>) => {
-    const { name, value, type } = e.target as HTMLInputElement;
-    let newValue: any = value;
-    if (type === 'number') {
-      newValue = Number(value);
-    }
-    if (type === 'checkbox') {
-      newValue = (e.target as HTMLInputElement).checked;
-    }
-    onUpdateChange(name, newValue);
-  };
+  // console.log('context', context.options);
+  // console.log('customOptions', customOptions);
+
   const onUpdateChange = (name: string, value: any): void => {
     customOptions[name] = value;
     onChange(customOptions);
@@ -86,14 +69,12 @@ export const ImageSaveOptionPanel: React.FC<StandardEditorProps<boolean>> = ({
           Upload Image File
         </FileUpload>
       </InlineFieldRow>
-
       <div className="gf-form-group">
         <canvas id="canvas" className={styles.canvas}></canvas>
       </div>
     </VerticalGroup>
   );
 };
-
 const getStyles = stylesFactory((options) => {
   return {
     canvas: css`

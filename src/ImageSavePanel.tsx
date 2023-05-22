@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from 'emotion';
-import { stylesFactory, useTheme } from '@grafana/ui';
-import { GrafanaTheme, PanelProps } from '@grafana/data';
+import { stylesFactory } from '@grafana/ui';
+import { PanelProps } from '@grafana/data';
 import { ImageSaveOption, ImageData } from './ImageSaveOption';
-interface Props extends PanelProps<ImageSaveOption> { }
+interface Props extends PanelProps<ImageSaveOption> {}
 
 export const ImageSavePanel: React.FC<Props> = ({ options, width, height }) => {
   // let showData = data.series.length > 0;
@@ -21,13 +21,17 @@ export const ImageSavePanel: React.FC<Props> = ({ options, width, height }) => {
     }
   }
   const imageEle = <img className={styles.mainImage} src={imageContext} {...imageAttr} />;
-  const outputEle = options.hasLink ? <a href={options.hyperlink} target="_blank" className={styles.hyperlink} title={options.linkTitle}> {imageEle} </a> : imageEle;
+  const outputEle = options.hasLink ? (
+    <a href={options.hyperlink} target="noreferrer" className={styles.hyperlink} title={options.linkTitle}>
+      {imageEle}
+    </a>
+  ) : (
+    imageEle
+  );
   return <div>{outputEle}</div>;
 };
 
-
 const getStyles = stylesFactory((options) => {
-  const theme: GrafanaTheme = useTheme();
   return {
     hyperlink: css`
       display: block;
@@ -35,6 +39,6 @@ const getStyles = stylesFactory((options) => {
     mainImage: css`
       display: block;
       background-color: ${options.hasBackground ? options.backgroundColor : 'transparent'};
-    `
-  }
-})
+    `,
+  };
+});

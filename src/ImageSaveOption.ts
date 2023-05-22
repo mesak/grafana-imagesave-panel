@@ -1,5 +1,5 @@
 export interface ImageData {
-  image: string;  //Image base64_encode
+  image: string; //Image base64_encode
   width: number;
   height: number;
 }
