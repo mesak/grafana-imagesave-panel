@@ -19,18 +19,3 @@ export const ImageSavePanel: React.FC<Props> = ({ options, width, height }) => {
   const image = <img src={options.showImage} {...imageAttr} />;
   return <div>{image}</div>;
 };
-
-// const getStyles = stylesFactory((options) => {
-//   return {
-//     wrapper: css`
-
-//     `,
-//     shapePanel: css`
-//       position: relative;
-//       padding: 20px;
-//       flex: 1;
-//       text-align: center;
-//       background-color: ${options.backgroundColor};
-//     `,
-//   };
-// });

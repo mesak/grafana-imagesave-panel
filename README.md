@@ -17,3 +17,6 @@ grafana-cli plugins install mesak-imagesave-panel
 3. Upload your image
 4. Save your dashboard
 
+## Screenshots
+
+![Screenshot](https://raw.githubusercontent.com/mesak/grafana-imagesave-panel/main/src/screenshot.jpg)

@@ -73,14 +73,6 @@ export const ImageSaveOptionPanel: React.FC<StandardEditorProps<boolean>> = ({
         console.error('Error converting to base64:', error);
       });
   };
-  const testChange = (e) => {
-    console.log('testChange', e);
-  };
-  const settings = {
-    showSlider: true,
-    step: 1,
-    value: 100,
-  };
   const styles = getStyles(customOptions);
   return (
     <>
