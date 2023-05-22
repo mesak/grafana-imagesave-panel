@@ -4,22 +4,20 @@ import {
   InlineField,
   InlineSwitch,
   FileUpload,
-  Slider,
   VerticalGroup,
   stylesFactory,
 } from '@grafana/ui';
 import { StandardEditorProps } from '@grafana/data';
 import { css } from 'emotion';
-// import { PanelOptionsEditorBuilder } from '@grafana/data';
-// import { OptionsUIBuilders } from '@grafana/data';
-
+import { ImageData } from './ImageSaveOption';
 export const ImageSaveOptionPanel: React.FC<StandardEditorProps<boolean>> = ({
   context,
+  item,
   onChange,
 }: StandardEditorProps) => {
-  const customOptions: any = context.options;
-  // console.log('context', context.options);
-  // console.log('customOptions', customOptions);
+  const customOptions: any = context.options[item.id] || {};
+  console.log('context', context.options);
+  console.log('customOptions', customOptions);
   const onInputChange = (e: FormEvent<HTMLInputElement>) => {
     const { name, value, type } = e.target as HTMLInputElement;
     let newValue: any = value;
@@ -51,7 +49,11 @@ export const ImageSaveOptionPanel: React.FC<StandardEditorProps<boolean>> = ({
           canvas.height = img.height;
           ctx.drawImage(img, 0, 0);
           const base64 = canvas.toDataURL('image/png');
-          resolve(base64);
+          resolve({
+            image: base64,
+            width: img.width,
+            height: img.height,
+          });
         };
         img.src = event.target.result;
       };
@@ -64,10 +66,12 @@ export const ImageSaveOptionPanel: React.FC<StandardEditorProps<boolean>> = ({
   const onFileUpload = (event: FormEvent<HTMLInputElement>) => {
     const file: File = event.target.files[0];
     convertToBase64(file)
-      .then((base64Image) => {
+      .then((imageData: ImageData) => {
         // console.log('Base64 image:', base64Image);
         // Do something with the base64 image
-        onUpdateChange('showImage', base64Image);
+        onUpdateChange('image', imageData.image);
+        onUpdateChange('width', imageData.width);
+        onUpdateChange('height', imageData.height);
       })
       .catch((error) => {
         console.error('Error converting to base64:', error);
@@ -75,33 +79,18 @@ export const ImageSaveOptionPanel: React.FC<StandardEditorProps<boolean>> = ({
   };
   const styles = getStyles(customOptions);
   return (
-    <>
-      <VerticalGroup spacing="none">
-        <h5>Image Settings</h5>
-        <InlineFieldRow aria-label="Image Upload">
-          <FileUpload accept="image/*" onFileUpload={onFileUpload}>
-            Upload Image File
-          </FileUpload>
-        </InlineFieldRow>
+    <VerticalGroup spacing="none">
+      <h5>Image Settings</h5>
+      <InlineFieldRow aria-label="Image Upload">
+        <FileUpload accept="image/*" onFileUpload={onFileUpload}>
+          Upload Image File
+        </FileUpload>
+      </InlineFieldRow>
 
-        <div className="gf-form-group">
-          <canvas id="canvas" className={styles.canvas}></canvas>
-        </div>
-      </VerticalGroup>
-      <VerticalGroup spacing="none">
-        <h5>Image Show Settings</h5>
-        <InlineFieldRow aria-label="">
-          <InlineField label="Responsive Size" labelWidth={18}>
-            <InlineSwitch checked={customOptions.showIsResponsive} name="showIsResponsive" onChange={onInputChange} />
-          </InlineField>
-        </InlineFieldRow>
-        <InlineFieldRow aria-label="">
-          <InlineField label="Is Ratio" labelWidth={18}>
-            <InlineSwitch checked={customOptions.showIsRatio} name="showIsRatio" onChange={onInputChange} />
-          </InlineField>
-        </InlineFieldRow>
-      </VerticalGroup>
-    </>
+      <div className="gf-form-group">
+        <canvas id="canvas" className={styles.canvas}></canvas>
+      </div>
+    </VerticalGroup>
   );
 };
 

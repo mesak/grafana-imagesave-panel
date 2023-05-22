@@ -3,7 +3,10 @@
   "name": "Image Save",
   "id": "mesak-imagesave-panel",
   "info": {
-    "keywords": ["image","panel"],
+    "keywords": [
+      "image",
+      "panel"
+    ],
     "description": "save image to grafana",
     "author": {
       "name": "Mesak",
@@ -14,9 +17,14 @@
       "large": "logo-ImageSaveLogo.svg"
     },
     "links": [],
-    "screenshots": [],
-    "version": "1.0.0",
-    "updated": "2023-05-19"
+    "screenshots": [
+      {
+        "name": "Options",
+        "path": "screenshot.jpg"
+      }
+    ],
+    "version": "1.1.0",
+    "updated": "2023-05-22"
   },
   "dependencies": {
     "grafanaVersion": "7.4.x",
