@@ -1,5 +1,5 @@
 import React, { FormEvent } from 'react';
-import { InlineFieldRow, FileUpload, VerticalGroup, stylesFactory } from '@grafana/ui';
+import { InlineFieldRow, FileUpload, VerticalGroup, stylesFactory, Button } from '@grafana/ui';
 import { StandardEditorProps } from '@grafana/data';
 import { css } from 'emotion';
 import { ImageData } from './ImageSaveOption';
@@ -72,6 +72,9 @@ export const ImageSaveOptionPanel: React.FC<StandardEditorProps<boolean>> = ({
       <div className="gf-form-group">
         <canvas id="canvas" className={styles.canvas}></canvas>
       </div>
+      <Button variant="secondary" onClick={() => onUpdateChange('image', '')}>
+        Clear Image
+      </Button>
     </VerticalGroup>
   );
 };
