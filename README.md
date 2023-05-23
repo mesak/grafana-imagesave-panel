@@ -19,4 +19,4 @@ grafana-cli plugins install mesak-imagesave-panel
 
 ## Screenshots
 
-![Screenshot](https://raw.githubusercontent.com/mesak/grafana-imagesave-panel/main/src/screenshot.jpg)
+![Screenshot](https://raw.githubusercontent.com/mesak/grafana-imagesave-panel/main/src/img/screenshot.jpg)

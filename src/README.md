@@ -4,4 +4,4 @@ This plugin is a panel plugin for Grafana that allows you to save image to grafa
 
 ## Screenshots
 
-![Screenshot](https://raw.githubusercontent.com/mesak/grafana-imagesave-panel/main/src/screenshot.jpg)
+![Screenshot](https://raw.githubusercontent.com/mesak/grafana-imagesave-panel/main/src/img/screenshot.jpg)
