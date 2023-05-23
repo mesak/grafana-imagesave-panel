@@ -14,14 +14,14 @@
       "url": "https://mesak.tw"
     },
     "logos": {
-      "small": "logo-ImageSaveLogo.svg",
-      "large": "logo-ImageSaveLogo.svg"
+      "small": "img/logo.svg",
+      "large": "img/logo.svg"
     },
     "links": [],
     "screenshots": [
       {
         "name": "Options",
-        "path": "screenshot.jpg"
+        "path": "img/screenshot.jpg"
       }
     ],
     "version": "%VERSION%",
