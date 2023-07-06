@@ -2,7 +2,7 @@
 
 This plugin is a panel plugin for Grafana that allows you to save image to grafana.
 
-# Installation
+## Installation
 
 To install this plugin using the grafana-cli tool:
 
@@ -10,7 +10,10 @@ To install this plugin using the grafana-cli tool:
 grafana-cli plugins install mesak-imagesave-panel
 ```
 
-# Usage
+## Attention
+This plugin directly stores image data in Grafana Database, allowing for quick and convenient addition of images to the dashboard. Please be mindful of the size of the added image data, as excessively large data can directly impact Grafana's performance.
+
+## Usage
 
 1. Add a new panel to your dashboard
 2. Select the Image Save Panel
