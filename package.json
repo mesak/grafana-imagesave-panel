@@ -1,6 +1,6 @@
 {
   "name": "mesak-imagesave-panel",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Image Save Panel Plugin for Grafana",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
@@ -19,9 +19,6 @@
     "@types/react": "17.0",
     "@types/react-dom": "17.0"
   },
-  "engines": {
-    "node": ">=16"
-  },
   "dependencies": {
     "@grafana/data": "^7.5",
     "@grafana/runtime": "7.5",
@@ -30,5 +27,8 @@
     "react-dom": "^17.0",
     "tslib": "2.5.0"
   },
-  "packageManager": "yarn@1.22.19"
+  "packageManager": "yarn@1.22.19",
+  "engines": {
+    "node": ">=16"
+  }
 }
