@@ -15,8 +15,16 @@ export const ImageSavePanel: React.FC<Props> = ({ options, width, height }) => {
   let { image: imageContext }: ImageData = options.context;
   const imageAttr: any = {};
   if (options.showIsResponsive) {
-    imageAttr.width = picWidth;
+    const windowAspectRatio = picWidth / picHeight;
+    const imageAspectRatio = options.context.width / options.context.height;
+
+    if (imageAspectRatio > windowAspectRatio) {
+      imageAttr.width = picWidth;
+    } else {
+      imageAttr.width = picHeight * imageAspectRatio;
+    }
     if (!options.showIsRatio) {
+      imageAttr.width = picWidth;
       imageAttr.height = picHeight;
     }
   }
