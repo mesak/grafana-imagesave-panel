@@ -1,6 +1,6 @@
 {
   "name": "mesak-imagesave-panel",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Image Save Panel Plugin for Grafana",
   "scripts": {
     "build": "grafana-toolkit plugin:build",
