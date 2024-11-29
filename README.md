@@ -1,8 +1,6 @@
 # Image Save Panel Plugin for Grafana
 
-[![Marketplace](https://img.shields.io/badge/dynamic/json?logo=grafana&color=F47A20&label=marketplace&prefix=v&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fmesak-imagesave-panel&query=%24.version)](https://grafana.com/grafana/plugins/mesak-imagesave-panel)
-
-[![Downloads](https://img.shields.io/badge/dynamic/json?logo=grafana&color=F47A20&label=downloads&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fmesak-imagesave-panel&query=%24.downloads)](https://grafana.com/grafana/plugins/mesak-imagesave-panel)
+[![Marketplace](https://img.shields.io/badge/dynamic/json?logo=grafana&color=F47A20&label=marketplace&prefix=v&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fmesak-imagesave-panel&query=%24.version)](https://grafana.com/grafana/plugins/mesak-imagesave-panel) [![Downloads](https://img.shields.io/badge/dynamic/json?logo=grafana&color=F47A20&label=downloads&url=https%3A%2F%2Fgrafana.com%2Fapi%2Fplugins%2Fmesak-imagesave-panel&query=%24.downloads)](https://grafana.com/grafana/plugins/mesak-imagesave-panel)
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/mesak/grafana-imagesave-panel?color=brightgreen&logo=github&label=latest)](https://github.com/mesak/grafana-imagesave-panel)
 [![License](https://img.shields.io/github/license/mesak/grafana-imagesave-panel)](https://github.com/mesak/grafana-imagesave-panel/blob/master/LICENSE)
